@@ -33,7 +33,7 @@ dataset_path = r"C:\Users\rober\Downloads\flowers\flowers"
 num_classes = 5
 img_size = 150
 
-# Create a simple CNN. This does not gurantee high classification accuracy.
+# Create a simple CNN.
 model = tf.keras.models.Sequential()
 model.add(tf.keras.layers.Input(shape=(img_size, img_size, 3)))
 model.add(tf.keras.layers.Conv2D(32, (3, 3), activation="relu", padding="same"))
@@ -56,7 +56,7 @@ train_generator = data_generator.flow_from_directory(
 # train_generator.class_indices
 data_outputs = tf.keras.utils.to_categorical(train_generator.labels)
 
-# Check the documentation for more information about the parameters: https://pygad.readthedocs.io/en/latest/pygad.html#pygad-ga-class
+
 initial_population = (
     keras_ga.population_weights
 )  # Initial population of network weights.
